@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.actions.act_window" id="inetwork_ne_action">
+            <field name="name">网络设备</field>
+            <field name="res_model">inetwork.ne</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="view_id" ref="automatic_aclresult_tree_view"/>-->
+        </record>
+        <record model="ir.actions.act_window" id="inetwork_ne_config_action">
+            <field name="name">网络设备类型</field>
+            <field name="res_model">inetwork.ne_type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="view_id" ref="automatic_aclresult_tree_view"/>-->
+        </record>
+        <!-- top level menu: no parent -->
+        <menuitem id="main_automatic_menu" name="Automatic" />
+        <!-- A first level in the left side menu is needed before using action= attribute -->
+        <menuitem id="equipment_manage_menu" name="equipment_manage" parent="main_automatic_menu" />
+        <menuitem id="equipment_config_menu" name="equipment_config" parent="main_automatic_menu" />
+        <!-- A second level in the left side menu is needed before using action= attribute -->
+        <menuitem id="ne_menu" name="network_equipment"  parent="equipment_manage_menu" action="inetwork_ne_action"/>
+        <menuitem id="ne_type_menu" name="network_equipment_type"  parent="equipment_config_menu" action="inetwork_ne_config_action"/>
+    </data>
+</openerp>

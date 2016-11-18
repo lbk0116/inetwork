@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_inetwork_ne_all,access_inetwork_ne_all,model_inetwork_ne,,1,0,0,0
+access_inetwork_ne_type_all,access_inetwork_ne_type_all,model_inetwork_ne_type,,1,0,0,0

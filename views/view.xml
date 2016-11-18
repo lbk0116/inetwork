@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="ne_form_view">
+            <field name="name">inetwork.ne</field>
+            <field name="model">inetwork.ne</field>
+            <field name="arch" type="xml">
+                <form string="network_equipment_form" >
+                     <group>
+                        <group>
+                            <field name="name" />
+                            <field name="type"/>
+                            <field name="notes" />
+                            <field name="active" />
+                        </group>
+                        <group >
+                            <field name="manage_ip" />
+                            <field name="account_name" />
+                            <field name="account_password" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="ne_tree_view">
+            <field name="name">inetwork.ne</field>
+            <field name="model">inetwork.ne</field>
+            <field name="arch" type="xml">
+                <tree string="network_equipment_tree" >
+                    <field name="name" />
+                    <field name="type"/>
+                    <field name="notes" />
+                    <field name="active" />
+                </tree>
+            </field>
+        </record>
+        <record id="ne_filter" model="ir.ui.view">
+            <field name="name">network_equipment_search</field>
+            <field name="model">inetwork.ne</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                        <filter string="无效" name="active" domain="[('active', '=',False)]"/>-->
+                    <separator/>
+                    <group expand="0" string="分组">
+                        <filter string="名称" name="name" context="{'group_by':'name'}"/>
+                        <filter string="类型" name="type" context="{'group_by':'type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
